@@ -3,7 +3,6 @@ import { LayoutDashboard, Settings, MessageSquare, Star, Briefcase, Calendar, Do
 import MenuItem from "./MenuItem";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { useNavigate, Link } from "react-router-dom";
-import ImageAvatar from "./ImageAvatar";
 
 const PERMISSIONS = {
     PANEL_VIEW: 'panel:view',
@@ -197,8 +196,7 @@ const SideBar = ({ userRole, userEmail }) => {
                             <span>{userEmail}</span>
                             <span>Perfil: {userRole}</span>
                         </div>
-                        <ImageAvatar/>
-                        <span className="icon-logout ms-2" onClick={handleLogout}><LogOutIcon /></span>
+                        <span className="icon-logout" onClick={handleLogout}><LogOutIcon /></span>
                     </div>
                 )}
 

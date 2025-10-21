@@ -1,7 +1,5 @@
 import React from "react"
 import { useParams } from "react-router-dom";
-import UploadAvatar from "./UploadAvatar";
-import { div } from "framer-motion/client";
 
 const Configuration = () => {
     const { role } = useParams();
@@ -11,10 +9,7 @@ const Configuration = () => {
     return (
         <>
             {role === 'mentor' &&
-                <div className="my-4">
-                    <h2 >Configura tu cuenta</h2>
-                    <UploadAvatar />
-                </div>
+                <h2>Aqui renderiza Configuracion de {role}</h2>
             }
             {role === 'student' &&
                 <h2>Aqui renderiza Configuracion de {role}</h2>

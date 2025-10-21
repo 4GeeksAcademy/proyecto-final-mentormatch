@@ -11,10 +11,6 @@ from api.routes import api
 from api.admin import setup_admin
 from api.commands import setup_commands
 from flask_jwt_extended import JWTManager
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-
 
 # from models import Person
 
@@ -43,7 +39,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 MIGRATE = Migrate(app, db, compare_type=True)
 db.init_app(app)
 
-
 # add the admin
 setup_admin(app)
 
@@ -52,15 +47,6 @@ setup_commands(app)
 
 # Add all endpoints form the API with a "api" prefix
 app.register_blueprint(api, url_prefix='/api')
-
-
-cloudinary.config(
-    cloud_name="dp6e1sg4y",
-    api_key="838782492858263",
-    api_secret="HDNSe0YGwqKD34sOPuYsqVJxiio",
-    secure=True
-)
-
 
 # Handle/serialize errors like a JSON object
 
