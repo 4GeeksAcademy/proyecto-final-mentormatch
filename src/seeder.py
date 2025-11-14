@@ -54,6 +54,8 @@ def seed_db():
     for i, student in enumerate(students, start=1):
         profile = StudentProfile(
             user_id=student.id,
+            username=f"student{i}",
+            name=f"Student {i}",
             interests="Programación, IA",
             goals=f"Meta estudiante {i}",
             experience_level=ExperienceLevelEnum.BEGINNER if i < 3 else ExperienceLevelEnum.INTERMEDIATE,
